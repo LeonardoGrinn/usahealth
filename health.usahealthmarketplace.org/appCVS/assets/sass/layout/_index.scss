@@ -1,0 +1,61 @@
+.form {
+    &__container {
+        input[type=button], input[type=submit], input[type=reset] {
+            background-color: #1A5C9C;
+            border: none;
+            color: white;
+            padding: 1rem 1.5rem;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 10px;
+            font-size: 1.2rem;
+
+            transition: all ease 0.3s;
+
+            &:hover {
+                background-color: #D6060F;  
+            }
+          }
+    }
+
+    &__inputfile {
+        width: 0.1px;
+        height: 0.1px;
+        opacity: 0;
+        overflow: hidden;
+        position: absolute;
+        z-index: -1;
+    }
+
+    &__inputfile, label {
+        font-size: 1rem;
+        font-weight: 400;
+        padding: 1rem 1.5rem;
+        color: $color-light-green;
+        display: inline-block;
+        border: $color-light-green 2px solid;
+        border-radius: 10px;
+
+        cursor: pointer; /* "hand" cursor */
+
+        transition: all ease 0.3s;
+    }
+
+    &__inputfile:focus + label,
+    &__inputfile + label:hover {
+        background-color: #D6060F;
+        border: #D6060F 2px solid;
+        color: white;
+    }
+}
+
+
+.footer {
+    width: 100vw;
+    height: 80px;
+    background-color: $color-light-green;
+    position: fixed;
+    bottom: 0;
+    color: $color-white;
+}

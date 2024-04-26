@@ -1,0 +1,132 @@
+.form {
+    // width: clamp(320px, 30%, 50vw);
+    margin: 0 auto;
+    @include borderBox;
+    height: 620px;
+    overflow: hidden;
+
+    @include respond(phone) {
+        padding: 1rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+
+        &__title {
+            margin-top: 4rem !important;
+            margin-bottom: 2rem;   
+        }
+    }
+
+    &__title {
+        text-align: center;
+        margin-top: 10rem;
+    }
+
+    &__progress {
+        content: "";
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 4px;
+        width: 0%;
+        background-color: $color-primary;
+        z-index: -1;
+    }
+
+    &__progressbar {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 3rem;
+        counter-reset: step;
+        // margin: 2rem 0 4rem;
+        width: 50%;
+
+        @include respond(tab-port) {
+            width: 80%; 
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 4px;
+            width: 100%;
+            background-color: $color-light-green;
+            z-index: -1;
+        }
+
+       &-step {
+        width: 4rem;
+        height: 4rem;
+        background-color: $color-light-green;
+        color: $color-white;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 1s ease;
+
+        @include respond(phone) {
+            width: 3rem;
+            height: 3rem;
+        }
+
+        &-active {
+           background-color: $color-primary; 
+           color: #fff;
+        }
+
+        &::before {
+            counter-increment: step;
+            content: counter(step);
+        }
+
+        &::after {
+            content: attr(data-title);
+            position: absolute;
+            top: calc(100% + 0.5rem);
+            font-size: 0.85rem;
+            color: $color-dark-gray;
+        }
+       } 
+    }
+
+    &__step {
+        display: none;
+        transform-origin: top;
+        animation: animate 0.5s;
+
+        &-active {
+            display: block;
+        }
+    }
+
+    &__input {
+        margin: 2rem 0;
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        input, textarea {
+            display: block;
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ccc;
+            border-radius: 0.25rem;
+        }
+
+        &-feedback {
+            color: $color-primary;
+            font-style: italic;
+            font-size: 0.8rem;
+        }
+    }
+}
+
+.status__ui, #penaltyfee__ui {
+    display: none;
+}
+

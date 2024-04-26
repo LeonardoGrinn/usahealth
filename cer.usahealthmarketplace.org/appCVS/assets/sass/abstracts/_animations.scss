@@ -1,0 +1,11 @@
+@keyframes animate {
+    from {
+        //transform: scale(1, 0);
+        opacity: 0;
+    }
+
+    to {
+        //transform: (1, 1);
+        opacity: 1;
+    }
+}

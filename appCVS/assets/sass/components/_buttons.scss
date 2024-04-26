@@ -1,0 +1,22 @@
+.btn {
+    padding: 0.75rem;
+    display: block;
+    text-decoration: none;
+    background-color: $color-light-green;
+    color: $color-white;
+    text-align: center;
+    border-radius: 0.25rem;
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    &__group {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    &:hover {
+        box-shadow: 0 0 0 2px $color-white, 0 0 0 3px $color-primary;
+    }
+}

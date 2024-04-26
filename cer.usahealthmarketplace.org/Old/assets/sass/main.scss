@@ -1,0 +1,15 @@
+/* Abstracts */
+@import './abstracts/variables';
+@import './abstracts/animations';
+@import './abstracts/mixins';
+/* Base */
+@import './base/base'; // base.scss
+
+/* Layout */
+@import './layout/index'; // Index.scss
+
+/* Components */
+@import './components/form';
+@import './components/preview';
+@import './components/buttons';
+@import './components/navbar';

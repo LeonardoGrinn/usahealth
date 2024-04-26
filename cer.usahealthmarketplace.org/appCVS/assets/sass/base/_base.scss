@@ -1,0 +1,17 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+*:disabled {
+    background-color: $color-dark-gray !important;
+}
+
+body {
+    margin: 0;
+    //display: grid;
+    place-items: center;
+    //min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
+}

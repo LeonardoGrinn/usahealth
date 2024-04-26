@@ -1,0 +1,14 @@
+.navbar {
+    width: 100vw;
+    height: 80px;
+    background-color: $color-light-green;
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+
+
+
+    &__logo {
+        height: 80px;
+    }
+}

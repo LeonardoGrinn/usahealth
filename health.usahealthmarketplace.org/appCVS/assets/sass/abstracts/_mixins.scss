@@ -1,0 +1,32 @@
+@mixin borderBox {
+    border: 1px solid $color-light-gray;
+    border-radius: .35rem;
+    padding: 1.5rem;
+} 
+
+
+
+/* Media Queries Manager */
+@mixin respond($breakpoint) {
+
+    @if $breakpoint == phone {
+        @media only screen and (max-width: 480px) and (orientation: portrait) { @content };    //600px
+    }
+
+    @if $breakpoint == tab-port {
+        @media only screen and (max-width: 820px) and (orientation: portrait) { @content };     //900px
+    }
+
+    @if $breakpoint == tab-land {
+        @media only screen and (max-width: 1024px) and (orientation: landscape) { @content };    //1200px
+    }
+
+    @if $breakpoint == md-desktop {
+        @media only screen and (max-width: 1200px) { @content };    //1200px
+    }
+
+    @if $breakpoint == big-desktop {
+        @media only screen and (min-width: 1201px) { @content };    //1800
+    }
+}
+
